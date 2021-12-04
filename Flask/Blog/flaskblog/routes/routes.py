@@ -1,5 +1,6 @@
 from flask import render_template
 from flaskblog import app
+from flaskblog.models.forms import RegistrationForm, LoginForm
 
 posts = [{
     'author': 'Ihsan',
@@ -24,3 +25,9 @@ def home():
 @app.route('/about')
 def about():
     return render_template('pages/about.html')
+
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('auth/login.html', form=form)
