@@ -1,10 +1,23 @@
-{% extends 'layout/base.html' %}
+{% extends "layout/base.html" %}
 {% block content %}
 <div class="content-selection">
     <form method= "post" action="">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Join Today</legend>
+            <div class="form-group mb-3">
+                {{ form.username.label(class="form-control-label") }}
+                {% if form.username.errors %}
+                    {{ form.username(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.username(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
             <div class="form-group mb-3">
                 {{ form.email.label(class="form-control-label") }}
                 {% if form.email.errors %}
@@ -31,9 +44,18 @@
                     {{ form.password(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
-            <div class="form-check mb-3">
-                {{ form.remember_me(class="form-check-input") }}
-                {{ form.remember_me.label(class="form-check-label") }}
+            <div class="form-group mb-3">
+                {{ form.retype_password.label(class="form-control-label") }}
+                {% if form.retype_password.errors %}
+                    {{ form.retype_password(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.retype_password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.retype_password(class="form-control form-control-lg") }}
+                {% endif %}
             </div>
         </fieldset>
             {{ form.submit(class="btn btn-primary") }}
@@ -41,8 +63,8 @@
 </div>
 <div class="border-top pt-3">
     <small class="text-muted">
-        Need an Account? <a href="/register" class="text-decoration-none ml-2">Register Here</a>
+        Already have an Account? <a href="/login" class="text-decoration-none ml-2">Log in here</a>
     </small>
-    <p class="small text-muted">Forgot Password</p>
+    <p class="small"><a href="" class="text-decoration-none">Forgot Password</a></p>
 </div>
-{% endblock content %}
+{% endblock %}

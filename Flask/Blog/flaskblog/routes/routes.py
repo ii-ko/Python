@@ -31,3 +31,9 @@ def about():
 def login():
     form = LoginForm()
     return render_template('auth/login.html', form=form)
+
+
+@app.route('/register')
+def register():
+    form = RegistrationForm()
+    return render_template('auth/register.html', form=form)
