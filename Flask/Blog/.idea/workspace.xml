@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e315283-4472-4f03-9015-d18084e8a25f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/dist/css/ajax-popper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/dist/css/jquery-321-slim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/dist/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/dist/css/max-cdn.bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/dist/css/maxcdn-bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/dist/css/bootstrap-css.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/dist/img/7e62b540c4eaa4ba.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/dist/img/a7be4576ebd7f9b9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/dist/img/cb1a837e9967f326.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/dist/img/default.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/dist/js/bootstrap.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/dist/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/dist/css/ajax-popper.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/dist/js/ajax-popper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/dist/css/jquery-321-slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/dist/js/jquery-321-slim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/dist/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/dist/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/dist/css/max-cdn.bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/dist/css/maxcdn-bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/dist/js/maxcdn-bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/dist/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/dist/js/bootstrap.bundle.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
     </list>
@@ -40,17 +47,21 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/dist/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../GitPy/Flask/Blog2" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DATA\Projects\Python\Flask\Blog\static\dist" />
       <recent name="D:\DATA\Projects\Python\Flask\Blog\static\dist\css" />
       <recent name="D:\DATA\Projects\Python\Flask\Blog\static" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\DATA\Projects\Python\Flask\Blog\static\dist\js" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Blog" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -71,6 +82,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
