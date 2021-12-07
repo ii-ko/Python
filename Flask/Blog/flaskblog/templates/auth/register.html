@@ -1,7 +1,7 @@
 {% extends "layout/layout.html" %}
 {% block content %}
 <div class="content-selection">
-    <form method= "post" action="">
+    <form method= "post">
         {{ form.hidden_tag() }}
         {{ csrf_token }}
         <fieldset class="form-group">
@@ -64,7 +64,7 @@
 </div>
 <div class="border-top pt-3">
     <small class="text-muted">
-        Already have an Account?<a href="/login" class="ml-2">login here!</a>
+        Already have an Account?<a href="{{ url_for('login') }}" class="ml-2">login here!</a>
         <p><a href="">Forgot Password</a></p>
     </small>
 </div>
