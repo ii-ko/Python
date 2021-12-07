@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e315283-4472-4f03-9015-d18084e8a25f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/flaskblog/templates/pages/change_password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskblog/models/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/models/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskblog/routes/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/routes/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/static/dist/img/default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/static/dist/img/default.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskblog/templates/pages/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/pages/account.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +34,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -147,5 +148,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

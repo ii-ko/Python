@@ -3,7 +3,7 @@ from flask_login import login_user, login_required, current_user, logout_user
 from flask_mail import Message
 from flaskblog import app, db, bcrypt, mail
 from flaskblog.models.forms import RegistrationForm, LoginForm, ForgotPasswordForm, ResetPasswordForm,\
-    UpdateAccountForm
+    UpdateAccountForm, ChangePasswordForm
 from flaskblog.models.database import User
 from PIL import Image
 import os
@@ -68,6 +68,24 @@ def account():
         form.email.data = current_user.email
     image_file = url_for('static', filename='/dist/img/'+current_user.image_file)
     return render_template('pages/account.html', title='Account', image_file=image_file, form=form)
+
+
+@app.route('/change_password', methods=['GET', 'POST'])
+@login_required
+def change_password():
+    form = ChangePasswordForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=current_user.email).first()
+        if bcrypt.check_password_hash(user.password, form.old_password.data):
+            hashed_password = bcrypt.generate_password_hash(form.new_password.data).decode('utf-8')
+            user.password = hashed_password
+            db.session.commit()
+            flash(f"The password has been update!", 'success')
+            return redirect(url_for('account'))
+        else:
+            flash(f"The new password and confirm password are not match. Please try again", 'danger')
+        return redirect(url_for('change_password'))
+    return render_template('pages/change_password.html', title='Change Password', form=form)
 
 
 @app.route('/about')
