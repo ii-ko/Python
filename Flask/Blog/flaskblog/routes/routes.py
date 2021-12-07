@@ -3,7 +3,7 @@ from flask_login import login_user, login_required, current_user, logout_user
 from flask_mail import Message
 from flaskblog import app, db, bcrypt, mail
 from flaskblog.models.forms import RegistrationForm, LoginForm, ForgotPasswordForm, ResetPasswordForm,\
-    UpdateAccountForm, ChangePasswordForm
+    UpdateAccountForm, ChangePasswordForm, PostForm
 from flaskblog.models.database import User
 from PIL import Image
 import os
@@ -34,7 +34,9 @@ def home():
 @app.route('/new_post')
 @login_required
 def new_post():
-    return render_template('posts/new_post.html', title='New Post')
+    form = PostForm()
+    legend = 'New Post'
+    return render_template('posts/new_post.html', title='New Post', form=form, legend=legend)
 
 
 def save_picture(form_picture):
