@@ -1,9 +1,16 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
-from wtforms import StringField, EmailField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, EmailField, PasswordField, TextAreaField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationError
 from flask_login import current_user
 from flaskblog.models.database import User
+
+
+class PostForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired(), Length(min=10, max=128)])
+    desc = StringField('Description', validators=[DataRequired(), Length(min=10, max=128)])
+    content = TextAreaField('Content', validators=[DataRequired()])
+    submit = SubmitField('Submit')
 
 
 class RegistrationForm(FlaskForm):
