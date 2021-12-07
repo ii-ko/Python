@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, abort
 from flask_login import login_user, login_required, current_user, logout_user
 from flask_mail import Message
 from flaskblog import app, db, bcrypt, mail
@@ -40,6 +40,24 @@ def new_post():
         flash(f'Your Post "{form.title.data}" has been created!', 'success')
         return redirect(url_for('home'))
     return render_template('posts/new_post.html', title='New Post', form=form, legend=legend)
+
+
+@app.route('/post/<int:post_id>')
+def read_more_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    return render_template('posts/read_more.html', title=post.title, post=post)
+
+
+@app.route('/post/<int:post_id>/delete', methods=['GET', 'POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    flash(f'Your Post has been deleted!', 'success')
+    return redirect(url_for('home'))
 
 
 def save_picture(form_picture):
