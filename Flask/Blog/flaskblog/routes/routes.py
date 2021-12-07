@@ -67,7 +67,7 @@ def login():
     return render_template('auth/login.html', title='Login', form=form)
 
 
-def send_email(user):
+def send_reset_email(user):
     token = user.get_reset_token()
     msg = Message('Password reset request', sender='csmyauth01@gmail.com', recipients=[user.email])
     msg.body = f''' To reset your password, visit the following link:
@@ -75,6 +75,7 @@ def send_email(user):
     
     If you did not make this request then simply ignore this email and no change will be made.
     '''
+    mail.send(msg)
 
 
 @app.route('/forgot_password', methods=['GET', 'POST'])
@@ -84,7 +85,7 @@ def forgot_password():
     form = ForgotPasswordForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
-        send_email(user)
+        send_reset_email(user)
         flash(f"An email has been sent with instruction to reset your password", "info")
         return redirect(url_for('login'))
     return render_template('auth/forgot_password.html', title='Forgot Password', form=form)
