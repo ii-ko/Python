@@ -4,7 +4,7 @@ from flask_mail import Message
 from flaskblog import app, db, bcrypt, mail
 from flaskblog.models.forms import RegistrationForm, LoginForm, ForgotPasswordForm, ResetPasswordForm,\
     UpdateAccountForm, ChangePasswordForm, PostForm
-from flaskblog.models.database import User
+from flaskblog.models.database import User, Post
 from PIL import Image
 import os
 import secrets
@@ -31,11 +31,18 @@ def home():
     return render_template('pages/index.html', posts=posts, title='Home')
 
 
-@app.route('/new_post')
+@app.route('/new_post', methods=['GET', 'POST'])
 @login_required
 def new_post():
     form = PostForm()
     legend = 'New Post'
+    if form.validate_on_submit():
+        post = Post(title=form.title.data, description=form.desc.data,
+                    content=form.content.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash(f'Your Post "{form.title.data}" has been created!', 'success')
+        return redirect(url_for('home'))
     return render_template('posts/new_post.html', title='New Post', form=form, legend=legend)
 
 
