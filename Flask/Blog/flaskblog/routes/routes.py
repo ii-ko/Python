@@ -83,8 +83,8 @@ def change_password():
             flash(f"The password has been update!", 'success')
             return redirect(url_for('account'))
         else:
-            flash(f"The new password and confirm password are not match. Please try again", 'danger')
-        return redirect(url_for('change_password'))
+            flash(f"The new password and old password are not match. Please try again", 'danger')
+            return redirect(url_for('change_password'))
     return render_template('pages/change_password.html', title='Change Password', form=form)
 
 

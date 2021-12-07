@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e315283-4472-4f03-9015-d18084e8a25f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flaskblog/templates/pages/change_password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/models/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/models/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskblog/routes/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/routes/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/pages/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/pages/account.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +51,7 @@
       <recent name="D:\DATA\Projects\Python\Flask\Blog\static\dist\js" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run (1)">
+  <component name="RunManager" selected="Python.routes">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Blog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -68,6 +65,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flaskblog/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="routes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Blog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/flaskblog/routes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flaskblog/routes/routes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -121,6 +139,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.run (1)" />
+        <item itemvalue="Python.routes" />
         <item itemvalue="Python.__init__" />
         <item itemvalue="Python.run" />
       </list>
