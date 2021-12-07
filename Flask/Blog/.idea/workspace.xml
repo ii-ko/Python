@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e315283-4472-4f03-9015-d18084e8a25f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flaskblog/templates/auth/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskblog/templates/auth/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/routes/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/routes/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/static/dist/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/static/dist/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/pages/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/layout/layout.html" afterDir="false" />
-    </list>
+    <list default="true" id="8e315283-4472-4f03-9015-d18084e8a25f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
