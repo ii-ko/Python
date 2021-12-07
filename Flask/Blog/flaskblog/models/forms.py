@@ -30,9 +30,15 @@ class LoginForm(FlaskForm):
 
 class ForgotPasswordForm(FlaskForm):
     email = EmailField('Email', validators=[DataRequired(), Email()])
-    submit = SubmitField('Send Link')
+    submit = SubmitField('Request Reset Password')
 
     def validate_email(self, email):
         email = User.query.filter_by(email=email.data).first()
         if email is None:
             raise ValidationError('There is no account with that email.')
+
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('Password', validators=[DataRequired()])
+    repeat_password = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Reset Password')

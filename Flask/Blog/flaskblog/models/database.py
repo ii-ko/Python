@@ -18,7 +18,7 @@ class User(db.Model, UserMixin):
     create_at = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     post = db.relationship('Post', backref='author', lazy=True)
 
-    def get_reset_toke(self, expires_sec=300):
+    def get_reset_token(self, expires_sec=300):
         s = Serializer(app.config['SECRET_KEY'], expires_sec)
         return s.dumps({'user_id': self.id}).decode('utf-8')
 
