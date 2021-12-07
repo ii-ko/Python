@@ -18,6 +18,7 @@ def home():
 
 
 @app.route('/user/str:<username>')
+@login_required
 def user_post(username):
     page = request.args.get('page', 1, type=int)
     user = User.query.filter_by(username=username).first_or_404()
