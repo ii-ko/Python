@@ -10,24 +10,9 @@ import os
 import secrets
 
 
-
-posts = [{
-    'author': 'ii-ko',
-    'title': 'programming',
-    'content': 'Python programming',
-    'date_posted': 'May 3rd, 2012'
-},
-{
-    'author': 'tamae',
-    'title': 'design',
-    'content': 'Web design',
-    'date_posted': 'May 4th, 2012'
-},
-]
-
-
 @app.route('/')
 def home():
+    posts = Post.query.all()
     return render_template('pages/index.html', posts=posts, title='Home')
 
 
