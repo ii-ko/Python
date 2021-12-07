@@ -6,8 +6,9 @@
                  alt="user_post" class="rounded-circle article-img">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a href="" class="mr-2 text-decoration-none">{{ post.author.username }}</a>
-                    <small class="text-muted">{{ post.date_posted }}</small>
+                    <a href="{{ url_for('user_post', username=post.author.username)}}"
+                       class="mr-2 text-decoration-none">{{ post.author.username }}</a>
+                    <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
                 </div>
                 <h2><a href="" class="article-title">{{ post.title }}</a></h2>
                 <p class="article-content">{{ post.description }}</p>

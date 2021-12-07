@@ -17,6 +17,15 @@ def home():
     return render_template('pages/index.html', posts=posts, title='Home')
 
 
+@app.route('/user/str:<username>')
+def user_post(username):
+    page = request.args.get('page', 1, type=int)
+    user = User.query.filter_by(username=username).first_or_404()
+    posts = Post.query.filter_by(author=user). \
+        order_by(Post.date_posted.desc()).paginate(page=page, per_page=4)
+    return render_template('posts/post_by_user.html', title='Home', posts=posts, user=user)
+
+
 @app.route('/new_post', methods=['GET', 'POST'])
 @login_required
 def new_post():
