@@ -25,6 +25,12 @@ def home():
     return render_template('pages/index.html', posts=posts, title='Home')
 
 
+@app.route('/new_post')
+@login_required
+def new_post():
+    return render_template('posts/new_post.html', title='New Post')
+
+
 @app.route('/account')
 @login_required
 def account():
