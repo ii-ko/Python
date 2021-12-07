@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e315283-4472-4f03-9015-d18084e8a25f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/flaskblog/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskblog/templates/auth/forgot_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskblog/models/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/models/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskblog/routes/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/routes/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/layout/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/layout/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskblog/templates/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/auth/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskblog/templates/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/auth/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +38,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../GitPy/Flask/Blog2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">

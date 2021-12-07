@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, login_required, current_user, logout_user
 from flaskblog import app, db, bcrypt
-from flaskblog.models.forms import RegistrationForm, LoginForm
+from flaskblog.models.forms import RegistrationForm, LoginForm, ForgotPasswordForm
 from flaskblog.models.database import User
 
 posts = [{
@@ -64,6 +64,12 @@ def login():
         else:
             flash(f'Login unsuccessful. Please check your username and password.', 'danger')
     return render_template('auth/login.html', title='Login', form=form)
+
+
+@app.route('/forgot_password')
+def forgot_password():
+    form = ForgotPasswordForm()
+    return render_template('auth/forgot_password.html', title='Forgot Password', form=form)
 
 
 @app.route('/logout')
