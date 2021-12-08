@@ -3,6 +3,7 @@
 <div class="content-selection">
     <form method= "post">
         {{ form.hidden_tag() }}
+        {{ csrf_token }}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">{{ legend }}</legend>
             <div class="form-group">
