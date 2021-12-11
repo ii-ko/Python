@@ -12,10 +12,10 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <div class="button is-primary">
+            <a href="/signup" class="button is-primary">
               <strong>Sign Up</strong>
-            </div>
-            <div class="button is-light">Sign In</div>
+            </a>
+            <a href="/signin" class="button is-light">Sign In</a>
           </div>
         </div>
       </div>
