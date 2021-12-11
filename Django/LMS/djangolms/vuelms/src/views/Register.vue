@@ -52,7 +52,19 @@
 </template>
 
 <script>
-export default {};
+import { required, minLength, maxLength, between } from "vuelidate/lib/validators";
+
+export default {
+  name: "FormValidation",
+  data() {
+    return {
+      username: "",
+      email: "",
+      password: "",
+      conf_password: "",
+    };
+  },
+};
 </script>
 
 <style></style>
