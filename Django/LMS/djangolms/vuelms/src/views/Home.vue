@@ -1,31 +1,44 @@
 <template>
-  <div class="header">
-    <nav class="navbar" role="navigation" aria-label="main navigation" style="min-height: 5rem">
-      <div class="navbar-brand">
-        <a href="/" class="navbar-item is-size-4">DjangoLMS</a>
-      </div>
-      <div id="navbar-item" class="navbar-menu">
-        <div class="navbar-start">
-          <a href="" class="navbar-item">Home</a>
-          <a href="" class="navbar-item">About</a>
-        </div>
+  <div class="home">
+    <div class="hero is-info is-medium">
+      <div class="hero-body has-text-centered">
+        <h1 class="title">Welcome to DjangoLMS</h1>
 
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <div class="button is-primary">
-                <strong>Sign Up</strong>
-              </div>
-              <div class="button is-light">Sign In</div>
+        <h2 class="subtitle">An online place for learning what you want.</h2>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-4">
+            <div class="box has-text-centered">
+              <span class="icon is-size-2 has-text-info"><i class="far fa-clock"></i></span>
+              <h2 class="is-size-4 mt-4 mb-4">Study at your own pace</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum doloremque blanditiis iste adipisci esse quas debitis quo nobis.</p>
             </div>
+          </div>
+          <div class="column is-4">
+            <div class="box has-text-centered">
+              <span class="icon is-size-2 has-text-info"><i class="far fa-comments"></i></span>
+              <h2 class="is-size-4 mt-4 mb-4">Study with others</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum doloremque blanditiis iste adipisci esse quas debitis quo nobis.</p>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="box has-text-centered">
+              <span class="icon is-size-2 has-text-info"><i class="fas fa-home"></i></span>
+              <h2 class="is-size-4 mt-4 mb-4">Study from your home</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum doloremque blanditiis iste adipisci esse quas debitis quo nobis.</p>
+            </div>
+          </div>
+
+          <div class="column is-12 has-text-centered">
+            <a href="" class="button is-info is-size-3 mt-6 mb-6"> Click to get started </a>
           </div>
         </div>
       </div>
-    </nav>
-    <router-view />
-    <footer class="footer">
-      <p class="has-text-centered">Copyright © 2021</p>
-    </footer>
+    </section>
   </div>
 </template>
 
