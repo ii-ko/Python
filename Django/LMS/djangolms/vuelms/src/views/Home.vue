@@ -1,18 +1,32 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="header">
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="min-height: 5rem">
+      <div class="navbar-brand">
+        <a href="/" class="navbar-item is-size-4">DjangoLMS</a>
+      </div>
+      <div id="navbar-item" class="navbar-menu">
+        <div class="navbar-start">
+          <a href="" class="navbar-item">Home</a>
+          <a href="" class="navbar-item">About</a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <div class="button is-primary">
+                <strong>Sign Up</strong>
+              </div>
+              <div class="button is-light">Sign In</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <router-view />
+    <footer class="footer">
+      <p class="has-text-centered">Copyright © 2021</p>
+    </footer>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+<script></script>
