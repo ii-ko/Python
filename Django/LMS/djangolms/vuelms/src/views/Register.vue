@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { required, minLength, maxLength, between } from "vuelidate/lib/validators";
+import { required, email, minLength, maxLength, sameAs } from "vuelidate/lib/validators";
 
 export default {
   name: "FormValidation",
@@ -63,6 +63,30 @@ export default {
       password: "",
       conf_password: "",
     };
+  },
+  validations: {
+    username: {
+      required,
+      minLength: minLength(3),
+      maxLength: maxLength(32),
+    },
+    email: {
+      required,
+      email,
+      minLength: minLength(16),
+      maxLength: maxLength(128),
+    },
+    password: {
+      required,
+      minLength: minLength(3),
+      maxLength: maxLength(32),
+    },
+    conf_password: {
+      required,
+      minLength: minLength(3),
+      maxLength: maxLength(32),
+      confirmPassword: { required, sameAsPassword: sameAs("password") },
+    },
   },
 };
 </script>
