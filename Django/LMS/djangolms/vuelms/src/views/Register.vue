@@ -14,7 +14,7 @@
               <div class="field">
                 <label for="username">Username</label>
                 <div class="control">
-                  <input type="email" class="input" />
+                  <input type="text" v-model="username" class="form-control" :class="{ 'is-invalid': $v.username.$error }" />
                 </div>
               </div>
               <div class="field">
