@@ -10,30 +10,33 @@
       <div class="container">
         <div class="columns">
           <div class="column is-4 is-offset-4">
-            <form action="">
+            <form v-on:submit.prevent="submitForm">
               <div class="field">
                 <label for="username">Username</label>
                 <div class="control">
-                  <input type="text" v-model="username" class="form-control" :class="{ 'is-invalid': $v.username.$error }" />
+                  <input type="text" class="input" v-model="username" />
                 </div>
               </div>
               <div class="field">
                 <label for="email">Email</label>
                 <div class="control">
-                  <input type="text" class="input" />
+                  <input type="email" class="input" v-model="email" />
                 </div>
               </div>
               <div class="field">
                 <label for="password">Password</label>
                 <div class="control">
-                  <input type="password" class="input" />
+                  <input type="password" class="input" v-model="password.password" />
                 </div>
               </div>
               <div class="field">
                 <label for="conf_password">Confirm Password</label>
                 <div class="control">
-                  <input type="password" class="input" />
+                  <input type="password" class="input" v-model="password.confirm" />
                 </div>
+              </div>
+              <div class="notification is-danger" v-if="errors.length">
+                <p v-for="error in errors" v-bind:key="error">•{{ error }}</p>
               </div>
               <div class="field">
                 <div class="control">
@@ -52,40 +55,36 @@
 </template>
 
 <script>
-import { required, email, minLength, maxLength, sameAs } from "vuelidate/lib/validators";
-
 export default {
-  name: "FormValidation",
   data() {
     return {
       username: "",
       email: "",
-      password: "",
-      conf_password: "",
+      password: {
+        password: "",
+        confirm: "",
+      },
+      errors: [],
     };
   },
-  validations: {
-    username: {
-      required,
-      minLength: minLength(3),
-      maxLength: maxLength(32),
-    },
-    email: {
-      required,
-      email,
-      minLength: minLength(16),
-      maxLength: maxLength(128),
-    },
-    password: {
-      required,
-      minLength: minLength(3),
-      maxLength: maxLength(32),
-    },
-    conf_password: {
-      required,
-      minLength: minLength(3),
-      maxLength: maxLength(32),
-      confirmPassword: { required, sameAsPassword: sameAs("password") },
+  methods: {
+    submitForm() {
+      console.log("Register User");
+
+      this.errors = [];
+
+      if (this.username == "") {
+        this.errors.push("The username is missing");
+      }
+      if (this.email == "") {
+        this.errors.push("The email is missing");
+      }
+      if (this.password.password == "") {
+        this.errors.push("The password is missing");
+      }
+      if (this.password.confirm == "" || this.password.confirm != this.password.password) {
+        this.errors.push("The password are not match. Please try again");
+      }
     },
   },
 };
