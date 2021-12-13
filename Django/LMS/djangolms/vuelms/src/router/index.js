@@ -4,6 +4,8 @@ import About from "../views/About.vue";
 // auth
 import Register from "../views/Register.vue";
 import Login from "../views/Login.vue";
+// Pages
+import Account from "../views/pages/Account.vue";
 
 const routes = [
   {
@@ -25,6 +27,11 @@ const routes = [
     path: "/signin",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/pages/my-account",
+    name: "Account",
+    component: Account,
   },
 ];
 
