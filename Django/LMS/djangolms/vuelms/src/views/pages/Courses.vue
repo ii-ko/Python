@@ -21,7 +21,7 @@
           </div>
           <div class="column is-10">
             <div class="columns is-multiline">
-              <div class="column is-4">
+              <div class="column is-4" v-for="course in courses" v-bind:key="course.id">
                 <div class="card">
                   <div class="card-image">
                     <figure class="image is-4yb3">
@@ -31,71 +31,11 @@
                   <div class="card-content">
                     <div class="media">
                       <div class="media-body">
-                        <p class="is-size-5">Build a social network</p>
+                        <p class="is-size-5">{{ course.title }}</p>
                       </div>
                     </div>
                     <div class="content">
-                      <p>Learn the basics Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus consequatur quaerat quis voluptatum esse laborum non sapiente amet.</p>
-                      <a href="">More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="column is-4">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-4yb3">
-                      <img src="@/assets/default.png" alt="placeholders" />
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-body">
-                        <p class="is-size-5">Build a social network</p>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <p>Learn the basics Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus consequatur quaerat quis voluptatum esse laborum non sapiente amet.</p>
-                      <a href="">More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="column is-4">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-4yb3">
-                      <img src="@/assets/default.png" alt="placeholders" />
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-body">
-                        <p class="is-size-5">Build a social network</p>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <p>Learn the basics Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus consequatur quaerat quis voluptatum esse laborum non sapiente amet.</p>
-                      <a href="">More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="column is-4">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-4yb3">
-                      <img src="@/assets/default.png" alt="placeholders" />
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-body">
-                        <p class="is-size-5">Build a social network</p>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <p>Learn the basics Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus consequatur quaerat quis voluptatum esse laborum non sapiente amet.</p>
+                      <p>{{ course.short_description }}</p>
                       <a href="">More</a>
                     </div>
                   </div>
@@ -120,3 +60,26 @@
     </section>
   </div>
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      courses: [],
+    };
+  },
+  // Mounted merupakan tipe lifecycle pada Vue yang memungkinkan kita untuk mengakses dom persis sebelum dan sesudah template di-render.
+  // Jangan gunakan lifecycle tipe ini untuk keperluan mengambil data dan event, karena template membutuhkan data tersebut sebelum ditampilkan
+  mounted() {
+    console.log("mounted");
+
+    axios.get("/api/v1/courses/").then((response) => {
+      console.log(response.data);
+
+      this.courses = response.data;
+    });
+  },
+};
+</script>
