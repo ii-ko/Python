@@ -87,15 +87,15 @@ export default {
         this.errors.push("The password are not match. Please try again");
       }
 
-      if (!this.errors.data) {
-        const data = {
+      if (!this.errors.length) {
+        const formData = {
           username: this.username,
           email: this.email,
           password: this.password.password,
         };
 
         axios
-          .post("/api/v1/users/", data)
+          .post("/api/v1/users/", formData)
           .then((response) => {
             this.$router.push("/signin");
           })
