@@ -6,6 +6,7 @@ import Register from "../views/Register.vue";
 import Login from "../views/Login.vue";
 // Pages
 import Account from "../views/pages/Account.vue";
+import Courses from "../views/pages/Courses.vue";
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: "/pages/my-account",
     name: "Account",
     component: Account,
+  },
+  {
+    path: "/pages/courses",
+    name: "Courses",
+    component: Courses,
   },
 ];
 
