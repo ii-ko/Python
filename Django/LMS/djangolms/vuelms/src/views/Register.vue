@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -84,6 +85,31 @@ export default {
       }
       if (this.password.confirm == "" || this.password.confirm != this.password.password) {
         this.errors.push("The password are not match. Please try again");
+      }
+
+      if (!this.errors.data) {
+        const data = {
+          username: this.username,
+          email: this.email,
+          password: this.password.password,
+        };
+
+        axios
+          .post("/api/v1/users/", data)
+          .then((response) => {
+            this.$router.push("/signin");
+          })
+          .catch((error) => {
+            if (error.response) {
+              for (const property in error.response.data) {
+                this.errors.push(property + ": " + error.response.data[property]);
+              }
+              console.log(JSON.stringify(error.response.data));
+            } else if (error.message) {
+              this.errors.push("Something went wrong. Please try again");
+              console.log(JSON.stringify(error));
+            }
+          });
       }
     },
   },
