@@ -20,7 +20,15 @@
           </div>
 
           <div class="column is-10">
-            {{ course.long_description }}
+            <template v-if="$store.state.user.isAuthenticated">
+              {{ course.long_description }}
+            </template>
+
+            <template v-else>
+              <h2>Restricted Access</h2>
+
+              <p>You need to have an account to continue</p>
+            </template>
           </div>
         </div>
       </div>
