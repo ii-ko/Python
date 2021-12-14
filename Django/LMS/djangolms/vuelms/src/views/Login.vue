@@ -12,7 +12,7 @@
           <div class="column is-4 is-offset-4">
             <form v-on:submit.prevent="submitForm">
               <div class="field">
-                <label for="email">Email</label>
+                <label for="username">Username</label>
                 <div class="control">
                   <input type="text" class="input" v-model="username" />
                 </div>
