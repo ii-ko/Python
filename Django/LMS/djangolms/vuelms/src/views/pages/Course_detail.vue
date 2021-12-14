@@ -2,7 +2,7 @@
   <div class="course">
     <div class="hero is-info">
       <div class="hero-body has-text-centered">
-        <h1 class="title">Courses Detail</h1>
+        <h1 class="title">{{ course.title }}</h1>
       </div>
     </div>
     <section class="section">
@@ -20,15 +20,34 @@
           </div>
 
           <div class="column is-10">
-            <h2>Introduction</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, illum consequatur. Eaque, quaerat nobis autem fugit vero animi nostrum cum suscipit non numquam sint cupiditate, at vitae rerum quis quam quidem exercitationem
-              provident itaque debitis aliquam! Neque illum sed aliquid temporibus saepe cupiditate hic tenetur voluptatibus aspernatur voluptatum blanditiis explicabo voluptates ducimus dolorem numquam sequi iusto, a aperiam. Accusamus
-              tempora quisquam asperiores sed exercitationem.
-            </p>
+            {{ course.long_description }}
           </div>
         </div>
       </div>
     </section>
   </div>
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      course: [],
+    };
+  },
+  // Mounted merupakan tipe lifecycle pada Vue yang memungkinkan kita untuk mengakses dom persis sebelum dan sesudah template di-render.
+  // Jangan gunakan lifecycle tipe ini untuk keperluan mengambil data dan event, karena template membutuhkan data tersebut sebelum ditampilkan
+  mounted() {
+    console.log("mounted");
+
+    const slug = this.$route.params.slug;
+    axios.get("/api/v1/courses/" + slug).then((response) => {
+      console.log(response.data);
+
+      this.course = response.data;
+    });
+  },
+};
+</script>
