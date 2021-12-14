@@ -7,6 +7,7 @@ import Login from "../views/Login.vue";
 // Pages
 import Account from "../views/pages/Account.vue";
 import Courses from "../views/pages/Courses.vue";
+import Course_detail from "../views/pages/Course_detail.vue";
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     path: "/pages/courses",
     name: "Courses",
     component: Courses,
+  },
+  {
+    path: "/pages/course/:slug",
+    name: "Course_detail",
+    component: Course_detail,
   },
 ];
 
