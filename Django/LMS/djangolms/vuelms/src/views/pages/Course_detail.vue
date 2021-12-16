@@ -23,6 +23,7 @@
                 <h2>{{ activeLesson.title }}</h2>
                 {{ activeLesson.long_description }}
                 <hr />
+
                 <h2>Comments</h2>
                 <article class="media box" v-for="comment in comments" v-bind:key="comment.id">
                   <div class="media-content">
@@ -36,6 +37,7 @@
                   </div>
                 </article>
                 <br />
+
                 <h2>Add Comment</h2>
                 <form v-on:submit.prevent="submitComment()">
                   <div class="field">
@@ -58,6 +60,10 @@
                     </div>
                   </div>
                 </form>
+                <br />
+                <div class="notification is-danger" v-if="errors.length">
+                  <p v-for="error in errors" v-bind:key="error">•{{ error }}</p>
+                </div>
               </template>
 
               <template v-else>
@@ -92,6 +98,7 @@ export default {
         name: "",
         content: "",
       },
+      errors: [],
     };
   },
   // Mounted merupakan tipe lifecycle pada Vue yang memungkinkan kita untuk mengakses dom persis sebelum dan sesudah template di-render.
@@ -116,16 +123,28 @@ export default {
     submitComment() {
       console.log("submit comment");
 
-      axios
-        .post("/api/v1/courses/" + this.course.slug + "/" + this.activeLesson.slug + "/", this.comment)
-        .then((response) => {
-          this.comment.name = "";
-          this.comment.content = "";
-          alert("The comment was added");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      this.errors = [];
+
+      if (this.comment.name == "") {
+        this.errors.push("The name must be filled out");
+      }
+
+      if (this.comment.content == "") {
+        this.errors.push("The comment must be filled out");
+      }
+
+      if (!this.errors.length) {
+        axios
+          .post("/api/v1/courses/" + this.course.slug + "/" + this.activeLesson.slug + "/", this.comment)
+          .then((response) => {
+            this.comment.name = "";
+            this.comment.content = "";
+            alert("The comment was added");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     },
 
     setActiveLesson(lesson) {
