@@ -23,19 +23,20 @@
                 <h2>{{ activeLesson.title }}</h2>
                 {{ activeLesson.long_description }}
                 <hr />
-
+                <h2>Comments</h2>
                 <article class="media box" v-for="comment in comments" v-bind:key="comment.id">
                   <div class="media-content">
                     <div class="content">
                       <p>
                         <strong>{{ comment.name }}</strong>
-                        {{ comment.create_at }}<br />
+                        {{ dateTime(comment.create_at) }}<br />
                         {{ comment.content }}
                       </p>
                     </div>
                   </div>
                 </article>
-
+                <br />
+                <h2>Add Comment</h2>
                 <form v-on:submit.prevent="submitComment()">
                   <div class="field">
                     <label for="label">Name</label>
@@ -78,6 +79,7 @@
 
 <script>
 import axios from "axios";
+import moment from "moment";
 
 export default {
   data() {
@@ -107,6 +109,10 @@ export default {
   },
 
   methods: {
+    dateTime(value) {
+      return moment(value).format("YYYY-MM-DD");
+    },
+
     submitComment() {
       console.log("submit comment");
 
