@@ -12,14 +12,21 @@
             <h2>Table of contents</h2>
             <ul>
               <li class="li" v-for="lesson in lessons" v-bind:key="lesson.id">
-                <a href="">{{ lesson.title }}</a>
+                <a @click="activeLesson = lesson">{{ lesson.title }}</a>
               </li>
             </ul>
           </div>
 
           <div class="column is-10">
             <template v-if="$store.state.user.isAuthenticated">
-              {{ course.long_description }}
+              <template v-if="activeLesson">
+                <h2>{{ activeLesson.title }}</h2>
+                {{ activeLesson.long_description }}
+              </template>
+
+              <template v-else>
+                {{ course.long_description }}
+              </template>
             </template>
 
             <template v-else>
@@ -42,6 +49,7 @@ export default {
     return {
       course: {},
       lessons: [],
+      activeLesson: null,
     };
   },
   // Mounted merupakan tipe lifecycle pada Vue yang memungkinkan kita untuk mengakses dom persis sebelum dan sesudah template di-render.
