@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Course, Lessons
+from .models import Course, Lessons, Comment
 
 
 class CourseListSerializer(serializers.ModelSerializer):
@@ -18,3 +18,9 @@ class LessonListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lessons
         fields = ('id', 'title', 'slug', 'short_description', 'long_description')
+
+
+class CommentListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ('id', 'name', 'content', 'create_at')
