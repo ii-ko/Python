@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -49,3 +50,12 @@ class Lessons(models.Model):
     long_description = models.TextField(blank=True, null=True)
     status = models.CharField(max_length=20, choices=CHOICE_STATUS, default=PUBLISHED)
     lesson_type = models.CharField(max_length=20, choices=CHOICE_LESSON_TYPE, default=ARTICLE)
+
+
+class Comment(models.Model):
+    course = models.ForeignKey(Course, related_name='comments', on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lessons, related_name='comments', on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    content = models.TextField()
+    create_at = models.DateTimeField(auto_now_add=True)
+    create_by = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE)
