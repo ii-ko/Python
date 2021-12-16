@@ -6,7 +6,7 @@
     <div id="navbar-item" class="navbar-menu">
       <div class="navbar-start">
         <router-link to="/" class="navbar-item">Home</router-link>
-        <router-link to="/Courses" class="navbar-item">Courses</router-link>
+        <router-link to="/pages/courses" class="navbar-item">Courses</router-link>
         <router-link to="/about" class="navbar-item">About</router-link>
       </div>
 
