@@ -95,6 +95,17 @@ export default {
   methods: {
     submitComment() {
       console.log("submit comment");
+
+      axios
+        .post("/api/v1/courses/" + this.course.slug + "/" + this.activeLesson.slug + "/", this.comment)
+        .then((response) => {
+          this.comment.name = "";
+          this.comment.content = "";
+          alert("The comment was added");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };
