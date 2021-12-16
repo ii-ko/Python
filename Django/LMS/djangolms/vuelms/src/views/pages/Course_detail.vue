@@ -22,6 +22,28 @@
               <template v-if="activeLesson">
                 <h2>{{ activeLesson.title }}</h2>
                 {{ activeLesson.long_description }}
+                <hr />
+                <form v-on:submit.prevent="submitComment()">
+                  <div class="field">
+                    <label for="label">Name</label>
+                    <div class="control">
+                      <input type="text" class="input" v-model="comment.name" />
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="label">Comment</label>
+                    <div class="control">
+                      <textarea class="textarea" v-model="comment.content" />
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <div class="control">
+                      <button class="button is-link">Submit</button>
+                    </div>
+                  </div>
+                </form>
               </template>
 
               <template v-else>
@@ -50,6 +72,10 @@ export default {
       course: {},
       lessons: [],
       activeLesson: null,
+      comment: {
+        name: "",
+        content: "",
+      },
     };
   },
   // Mounted merupakan tipe lifecycle pada Vue yang memungkinkan kita untuk mengakses dom persis sebelum dan sesudah template di-render.
@@ -64,6 +90,12 @@ export default {
       this.course = response.data.course;
       this.lessons = response.data.lesson;
     });
+  },
+
+  methods: {
+    submitComment() {
+      console.log("submit comment");
+    },
   },
 };
 </script>
