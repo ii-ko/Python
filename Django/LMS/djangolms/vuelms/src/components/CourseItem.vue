@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-image">
       <figure class="image is-4yb3">
-        <img src="@/assets/default.png" alt="placeholders" />
+        <img :src="course.get_image" alt="placeholders" />
       </figure>
     </div>
     <div class="card-content">
