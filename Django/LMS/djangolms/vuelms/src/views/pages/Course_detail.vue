@@ -28,6 +28,7 @@
                 <article class="media box" v-for="comment in comments" v-bind:key="comment.id">
                   <div class="media-content">
                     <div class="content">
+                      <template> </template>
                       <p>
                         <strong>{{ comment.name }}</strong>
                         {{ dateTime(comment.create_at) }}<br />
@@ -139,7 +140,7 @@ export default {
           .then((response) => {
             this.comment.name = "";
             this.comment.content = "";
-            alert("The comment was added");
+            this.comments.push(response.data);
           })
           .catch((error) => {
             console.log(error);
@@ -155,7 +156,6 @@ export default {
     getComments() {
       axios.get("/api/v1/courses/" + this.course.slug + "/" + this.activeLesson.slug + "/comments/").then((response) => {
         console.log(response.data);
-
         this.comments = response.data;
       });
     },
