@@ -36,10 +36,41 @@
           <div class="column is-12 has-text-centered">
             <a href="" class="button is-info is-size-3 mt-6 mb-6"> Click to get started </a>
           </div>
+
+          <hr />
+          <div class="column is-3" v-for="course in courses" v-bind:key="course.id">
+            <CourseItem :course="course" />
+          </div>
         </div>
       </div>
     </section>
   </div>
 </template>
 
-<script></script>
+<script>
+import axios from "axios";
+import CourseItem from "@/components/CourseItem";
+
+export default {
+  name: "Home",
+  data() {
+    return {
+      courses: [],
+    };
+  },
+  components: {
+    CourseItem,
+  },
+  // Mounted merupakan tipe lifecycle pada Vue yang memungkinkan kita untuk mengakses dom persis sebelum dan sesudah template di-render.
+  // Jangan gunakan lifecycle tipe ini untuk keperluan mengambil data dan event, karena template membutuhkan data tersebut sebelum ditampilkan
+  mounted() {
+    console.log("mounted");
+
+    axios.get("/api/v1/courses/get_frontpage_courses/").then((response) => {
+      console.log(response.data);
+
+      this.courses = response.data;
+    });
+  },
+};
+</script>
